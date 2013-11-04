@@ -1,9 +1,3 @@
-/*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
- 
-  This example code is in the public domain.
- */
 #include <Arduino.h>
 #include <HardwareSerial.h>
 #include <IRremote.h>
@@ -44,8 +38,6 @@ void loop()
         }
         if (code != 0) {
             irsend.sendNEC(code, 32);
-            //Serial.print("send: 0x");
-            //Serial.println(code, HEX);
         }
     }
 }

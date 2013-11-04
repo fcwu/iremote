@@ -98,49 +98,6 @@ int main(int argc, char *argv[]) {
         }
         return 0;
     }
-    //if (pipe(pipefd) < 0) {
-    //    perror("pipe");
-    //    exit(EXIT_FAILURE);
-    //}
-    //pid = fork();
-    //if (pid == 0) {
-    //    int fd = open_and_set(portname);
-    //    char buf [100] = {0};
-    //    printf("C: write\n");
-    //    for (i = 1; i < argc; ++i) {
-    //        write (fd, argv[i], 1);
-    //    }
-    //    if (set_interface_attribs (fd, B9600, 0) < 0) {
-    //        return -2;
-    //    }
-    //    set_blocking (fd, 1);                // set no blocking
-    //    write(pipefd[1], buf, sizeof buf);
-    //    printf("C: wait read\n");
-    //    read (fd, buf, sizeof buf);  // read up to 100 characters if ready to read
-    //    printf("C: readed\n");
-    //    printf("%s\n", buf);
-    //    printf("C: bye\n");
-    //    close(fd);
-    //} else if (pid > 0) {
-    //    char buf[32] = {0};
-    //    printf("P: wait read\n");
-    //    read(pipefd[0], buf, sizeof buf);
-    //    printf("P: readed\n");
-    //    int fd = open_and_set(portname);
-    //    for (i = 1; i < argc; ++i) {
-    //        write (fd, argv[i], 1);
-    //    }
-    //    set_blocking (fd, 0);                // set no blocking
-    //    printf("P: wait close\n");
-    //    printf("P: wait read\n");
-    //    //read (fd, buf, sizeof buf);  // read up to 100 characters if ready to read
-    //    printf("P: readed\n");
-    //    sleep(10);
-    //    close(fd);
-    //} else {
-    //    perror("fork");
-    //    exit(EXIT_FAILURE);
-    //}
     int fd = open_and_set(portname);
     for (i = 1; i < argc; ++i) {
         write (fd, argv[i], 1);
